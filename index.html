@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백화점 공간 홍보 기획서 | 8F-9F Family & Lifestyle Culture Zone</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Noto Sans KR, Montserrat, Outfit) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            rose: '#f43f5e',
+                            roseSoft: '#fff1f2',
+                            teal: '#0d9488',
+                            tealSoft: '#f0fdfa',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .6; transform: scale(1.1); }
+        }
+        
+        /* Teaser Poster CSS Graphic Styles */
+        .poster-bg-sky {
+            background: linear-gradient(180deg, #1d82dc 0%, #38bdf8 45%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .poster-cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 999px;
+            filter: blur(8px);
+        }
+        .poster-bg-dark {
+            background-color: #121318;
+            background-image: radial-gradient(#27272a 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .custom-glow {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Subtitle -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-rose-500 flex items-center justify-center text-white font-black text-xl shadow-md">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-extrabold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded tracking-wider uppercase">SPACE & PR PLAN</span>
+                            <span class="text-[10px] font-bold text-slate-400">8F-9F Family & Lifestyle Culture Zone</span>
+                        </div>
+                        <h1 class="text-base sm:text-lg font-black text-slate-900 leading-none mt-0.5">백화점 공간 홍보 기획서</h1>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-xs font-bold text-slate-600">
+                    <a href="#overview" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50/80 transition-colors">기획 개요</a>
+                    <a href="#space-concept" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50/80 transition-colors">공간 구성 (8F/9F)</a>
+                    <a href="#pr-campaign" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50/80 transition-colors">PR 캠페인 (3-Phase)</a>
+                    <a href="#checklist" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50/80 transition-colors">실행 체크리스트</a>
+                </nav>
+
+                <!-- Quick Action Status -->
+                <div class="flex items-center gap-2">
+                    <button onclick="scrollToSection('checklist')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow hover:shadow-md">
+                        <i class="fa-solid fa-list-check text-amber-400"></i>
+                        <span>체크리스트 (<span id="nav-progress-text">0/15</span>)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- Executive Overview & Official Sign-off Block -->
+        <section id="overview" class="space-y-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div class="space-y-3 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-200 text-amber-900 text-xs font-extrabold">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 badge-pulse"></span>
+                        결재완료 · 리뉴얼 프로모션 계획안 (Space Promotion Proposal)
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-snug">
+                        8F 체험형 패밀리 공간 & 9F 다이닝 & 릴렉스 리뉴얼
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        단순히 물건을 파는 곳을 넘어 <strong>'상상이 현실이 되고 캐릭터 세계를 탐험하며 즐기는 체험형 공간'</strong>과 부모와 아이 모두 편안하게 머무를 수 있는 <strong>'미식과 휴식이 공존하는 공간'</strong>을 조성합니다.
+                    </p>
+
+                    <!-- Core Hashtags -->
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">#8F_PlayPlaza</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">#4대캐릭터체험존</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">#9F_뷰카페</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">#패밀리푸드코트</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-200 text-xs font-black">#3040육아맘_맞춤공간</span>
+                    </div>
+                </div>
+
+                <!-- Approval Sign-off Grid -->
+                <div class="w-full lg:w-auto bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200/90 shrink-0">
+                    <div class="text-xs font-bold text-slate-500 mb-2.5 flex items-center justify-between">
+                        <span class="flex items-center gap-1.5 text-slate-700"><i class="fa-solid fa-file-signature text-amber-500"></i> 결재 라인 (전자서명)</span>
+                        <span class="text-emerald-600 font-extrabold text-[11px]"><i class="fa-solid fa-circle-check mr-1"></i>최종 승인</span>
+                    </div>
+                    <div class="grid grid-cols-5 gap-2 text-center text-xs">
+                        <div class="border border-slate-200 rounded-xl bg-white p-2 flex flex-col justify-between h-20 shadow-2xs">
+                            <div class="text-slate-400 text-[10px] font-bold">기획</div>
+                            <div class="font-extrabold text-slate-800">손예윤</div>
+                            <div class="text-emerald-500 text-[10px] font-bold"><i class="fa-solid fa-check"></i> 승인</div>
+                        </div>
+                        <div class="border border-slate-200 rounded-xl bg-white p-2 flex flex-col justify-between h-20 shadow-2xs">
+                            <div class="text-slate-400 text-[10px] font-bold">검토</div>
+                            <div class="font-extrabold text-slate-800">이재연</div>
+                            <div class="text-emerald-500 text-[10px] font-bold"><i class="fa-solid fa-check"></i> 승인</div>
+                        </div>
+                        <div class="border border-slate-200 rounded-xl bg-white p-2 flex flex-col justify-between h-20 shadow-2xs">
+                            <div class="text-slate-400 text-[10px] font-bold">검토</div>
+                            <div class="font-extrabold text-slate-800">김소현</div>
+                            <div class="text-emerald-500 text-[10px] font-bold"><i class="fa-solid fa-check"></i> 승인</div>
+                        </div>
+                        <div class="border border-slate-200 rounded-xl bg-white p-2 flex flex-col justify-between h-20 shadow-2xs">
+                            <div class="text-slate-400 text-[10px] font-bold">협조</div>
+                            <div class="font-extrabold text-slate-800">박대원</div>
+                            <div class="text-emerald-500 text-[10px] font-bold"><i class="fa-solid fa-check"></i> 승인</div>
+                        </div>
+                        <div class="border border-amber-300 rounded-xl bg-amber-50/70 p-2 flex flex-col justify-between h-20 shadow-2xs">
+                            <div class="text-amber-700 text-[10px] font-bold">승인</div>
+                            <div class="font-extrabold text-amber-900">한진위</div>
+                            <div class="text-emerald-600 text-[10px] font-bold"><i class="fa-solid fa-check"></i> 결재완료</div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-medium text-right mt-2.5 pt-2 border-t border-slate-200/60">
+                        진위여부 확인: <strong class="text-slate-600">이수현</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Target Analysis & Core Values -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Target Strategy Card -->
+                <div class="bg-gradient-to-br from-white via-amber-50/30 to-amber-100/30 rounded-3xl p-6 sm:p-7 border border-amber-200/80 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute -right-6 -bottom-6 text-amber-200/40 text-9xl pointer-events-none">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900">타깃 분석 (Target Analysis)</h3>
+                                <p class="text-xs text-amber-700 font-bold">핵심 타깃: 30~40대 육아맘 전체</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600 relative z-10">
+                            <div class="p-3.5 bg-white/90 rounded-2xl border border-slate-100 shadow-2xs">
+                                <span class="font-bold text-slate-800 block mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-crosshairs text-amber-500"></i> 목적형 방문 특성
+                                </span>
+                                백화점 방문 시 <strong>문화센터, 쇼핑, 식사, 장보기</strong>를 한 번에 해결하는 효율 중심의 동선을 강하게 선호함.
+                            </div>
+                            <div class="p-3.5 bg-white/90 rounded-2xl border border-slate-100 shadow-2xs">
+                                <span class="font-bold text-slate-800 block mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-heart-circle-check text-amber-500"></i> 핵심 페인포인트 완화
+                                </span>
+                                유모차와 짐으로 인한 이동 제약 및 아이 케어로 인한 <strong>체력적·시간적·심리적 압박 완화</strong>가 최고의 방문 동기 및 재방문 요인.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Strategy Card -->
+                <div class="bg-gradient-to-br from-white via-rose-50/30 to-rose-100/30 rounded-3xl p-6 sm:p-7 border border-rose-200/80 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute -right-6 -bottom-6 text-rose-200/40 text-9xl pointer-events-none">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i class="fa-solid fa-sparkles text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900">핵심 전략 (Core Value)</h3>
+                                <p class="text-xs text-rose-700 font-bold">쇼핑의 놀이화 & 공간적 휴식 제공</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600 relative z-10">
+                            <div class="p-3.5 bg-white/90 rounded-2xl border border-slate-100 shadow-2xs flex items-start gap-3">
+                                <span class="px-2 py-0.5 rounded-lg bg-rose-100 text-rose-800 text-xs font-black shrink-0 mt-0.5">8F</span>
+                                <div>
+                                    <strong class="text-slate-800 block mb-0.5">쇼핑의 놀이화 (PLAY & EXPERIENCE)</strong>
+                                    360도 안심 개방형 소파존 및 4대 캐릭터 체험존 (타요, 티니핑, 디즈니, 포켓몬)
+                                </div>
+                            </div>
+                            <div class="p-3.5 bg-white/90 rounded-2xl border border-slate-100 shadow-2xs flex items-start gap-3">
+                                <span class="px-2 py-0.5 rounded-lg bg-amber-100 text-amber-800 text-xs font-black shrink-0 mt-0.5">9F</span>
+                                <div>
+                                    <strong class="text-slate-800 block mb-0.5">여유로운 미식과 조망 (DINING & REST)</strong>
+                                    통유리로 8F을 관람하는 뷰 카페 & 유모차 전용 주차장, 베이비 케어룸
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spatial Experience Blueprint Section -->
+        <section id="space-concept" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-extrabold text-amber-600 uppercase tracking-wider mb-1">
+                        <i class="fa-solid fa-compass"></i> Spatial Experience Blueprint
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">8F & 9F 리뉴얼 공간 세부 구성</h2>
+                </div>
+
+                <!-- Floor Switcher Tabs -->
+                <div class="inline-flex p-1.5 bg-slate-200/80 rounded-2xl text-xs font-bold">
+                    <button id="btn-floor-8" onclick="switchFloor('8F')" class="px-5 py-2.5 rounded-xl transition-all shadow-sm bg-white text-slate-900 font-extrabold">
+                        <i class="fa-solid fa-child-reaching mr-1.5 text-amber-500"></i>8F 체험형 패밀리 공간 (Play Plaza)
+                    </button>
+                    <button id="btn-floor-9" onclick="switchFloor('9F')" class="px-5 py-2.5 rounded-xl transition-all text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-utensils mr-1.5 text-rose-500"></i>9F 다이닝 & 릴렉스 (Dining & Rest)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floor 8 Content View -->
+            <div id="floor-8-content" class="space-y-6 transition-all duration-300">
+                <!-- Floor Banner Header -->
+                <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl">
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-extrabold mb-3">8F CHARACTER WORLD & PLAY PLAZA</span>
+                        <h3 class="text-2xl sm:text-3xl font-black mb-2">"아이는 신나게 놀고, 부모는 한눈에 안심하는 공간"</h3>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            360도 소파존을 중심으로 4대 인기 캐릭터 존이 둘러싸여 안심하고 케어할 수 있는 프리미엄 공간
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Zone Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Central Play Plaza -->
+                    <div class="bg-white p-6 rounded-3xl border border-amber-300/80 shadow-xs hover:shadow-md transition group relative overflow-hidden">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-extrabold">중앙 휴게</span>
+                            <i class="fa-solid fa-couch text-amber-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">PLAY PLAZA (360도 안심 케어)</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            360도 중앙 개방형 소파에서 4개 캐릭터 존에서 노는 아이를 한눈에 둘러보며 안심하고 휴식할 수 있는 핵심 휴게존.
+                        </p>
+                    </div>
+
+                    <!-- Tayo Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-100 text-blue-800 text-xs font-extrabold">스포츠웨어 / 신발</span>
+                            <i class="fa-solid fa-bus text-blue-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">타요존 (Tayo Run Track)</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            바닥에 설치된 <strong>트랙(WALK STEP → TURN → RUN)</strong>에서 신발을 착용하고 직접 뛰어볼 수 있는 활동형 피팅 공간.
+                        </p>
+                    </div>
+
+                    <!-- Teenieping Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-pink-100 text-pink-800 text-xs font-extrabold">아동 의류 / 스타일링</span>
+                            <i class="fa-solid fa-crown text-pink-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">티니핑존 (Teenieping Studio)</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            아이 눈높이에 맞춘 행거와 미러에서 다양한 의류와 액세서리를 직접 믹스앤매치하며 즐기는 아이 전용 스타일링 체험관.
+                        </p>
+                    </div>
+
+                    <!-- Disney Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-800 text-xs font-extrabold">완구 & 롤플레잉</span>
+                            <i class="fa-solid fa-wand-magic-sparkles text-purple-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">디즈니존 (Disney Adventure)</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            봉제인형 및 블록 체험, 롤플레잉 어트랙션 및 세상에 하나뿐인 <strong>'나만의 어드벤처 티켓'</strong> 직접 발급 서비스.
+                        </p>
+                    </div>
+
+                    <!-- Pokemon Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-yellow-100 text-yellow-800 text-xs font-extrabold">침구 / 홈웨어</span>
+                            <i class="fa-solid fa-bolt text-yellow-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">포켓몬존 (Pokemon Touch)</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            극세사, 순면, 누빔 등 다양한 고품질 침구 소재를 아이와 함께 직접 촉감으로 비교하고 체험하는 힐링 패밀리 존.
+                        </p>
+                    </div>
+
+                    <!-- Premium Kids Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-extrabold">프리미엄 의류</span>
+                            <i class="fa-solid fa-gem text-emerald-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">프리미엄 키즈존</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            고가 아동 브랜드 집결 구역. 유모차 이동에 최적화된 Wide-Path(여유로운 Wide 동선) 설계로 답답함 없는 쇼핑 환경.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floor 9 Content View (Hidden by default) -->
+            <div id="floor-9-content" class="space-y-6 hidden transition-all duration-300">
+                <!-- Floor Banner Header -->
+                <div class="bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl">
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-extrabold mb-3">9F FAMILY DINING & REST AREA</span>
+                        <h3 class="text-2xl sm:text-3xl font-black mb-2">"탁 트인 조망 속 즐기는 미식과 프라이빗 릴렉스"</h3>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            8층 놀이공간을 조망하는 통유리 뷰 카페와 세심한 유아 편의시설이 결합된 패밀리 다이닝
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Zone Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- View Cafe -->
+                    <div class="bg-white p-6 rounded-3xl border border-teal-300/80 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800 text-xs font-extrabold">뷰 카페 (View Cafe)</span>
+                            <i class="fa-solid fa-mug-hot text-teal-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">통유리 조망 카페</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            통유리창 좌석에서 아래층(8F) 플레이존의 아이를 살피며 여유로운 커피 한잔. 어린이 전용 디저트 바 완비.
+                        </p>
+                    </div>
+
+                    <!-- Food Court Zone -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-extrabold">푸드코트</span>
+                            <i class="fa-solid fa-utensils text-amber-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">패밀리 라운지 테이블</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            천장 구름·별 프로젝션 미디어 연출. 인원 및 연령별 퀵 테이블과 대가족용 패밀리 라운지 분리 운영.
+                        </p>
+                    </div>
+
+                    <!-- Stroller & Baby Care -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 text-xs font-extrabold">유아 편의 시설</span>
+                            <i class="fa-solid fa-baby-carriage text-rose-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">Stroller Parking & Care</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            유모차 전용 보관소(Stroller Parking) 구축. 프라이빗 수유실 및 이유식 맞춤형 베이비 케어(Baby & Family Care) 공간.
+                        </p>
+                    </div>
+
+                    <!-- Mini Game Plaza -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-800 text-xs font-extrabold">리워드 미션</span>
+                            <i class="fa-solid fa-gamepad text-purple-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-900 text-lg mb-1.5">미니 게임 플라자</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            8F 캐릭터존 QR 스탬프 미션 성공 토큰으로 참여하는 리워드 게임기 & 한정판 캐릭터 스티커 교환소.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrated PR Campaign Section -->
+        <section id="pr-campaign" class="space-y-8">
+            <div class="border-t border-slate-200/80 pt-8">
+                <div class="inline-flex items-center gap-2 text-xs font-extrabold text-rose-600 uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-bullhorn"></i> Integrated PR Campaign Plan
+                </div>
+                <h2 class="text-2xl font-black text-slate-900">3단계 PR 실행 계획 (Visual Simulators)</h2>
+                <p class="text-slate-600 text-sm mt-1">티저 포스터부터 모바일 숏폼, 5종 정보형 카드뉴스까지 입체적 바이럴 캠페인을 진행합니다.</p>
+            </div>
+
+            <!-- PHASE 1: TEASER POSTERS (PDF Page 3) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-slate-900 text-white rounded-xl text-xs font-black font-montserrat">PHASE 1</span>
+                        <h3 class="text-xl font-bold text-slate-900">티저 포스터 2종 <span class="text-xs text-rose-600 font-bold ml-2">"MOM IS EXHAUSTED"</span></h3>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">공감대 형성 & 8층 호기심 극대화</span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    육아맘이라면 누구나 겪는 <strong>'지친 엄마와 에너지가 넘치는 아이'</strong>의 상황을 직관적인 타이포그래피와 일러스트로 표현. 
+                    <em class="text-slate-800 font-bold">"See you at the 8th floor!"</em> 문구로 궁금증을 유발합니다.
+                </p>
+
+                <!-- Interactive Poster Graphic Display -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                    <!-- Poster #1: Sky Blue Typo Style -->
+                    <div class="poster-bg-sky text-white p-8 rounded-3xl flex flex-col justify-between items-center text-center shadow-lg min-h-[380px] relative group border border-blue-300/40">
+                        <!-- Cloud elements for graphic feel -->
+                        <div class="poster-cloud w-32 h-10 -top-2 -left-4"></div>
+                        <div class="poster-cloud w-40 h-12 bottom-12 -right-6"></div>
+
+                        <div class="text-[11px] font-black tracking-widest text-blue-900 bg-white/70 backdrop-blur-md px-3 py-1 rounded-full uppercase border border-white/50">
+                            Teaser Poster #1 (Mom is Exhausted)
+                        </div>
+                        
+                        <div class="my-auto py-6 z-10 space-y-1">
+                            <h4 class="font-montserrat font-black text-4xl sm:text-5xl tracking-tighter leading-none text-rose-600 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
+                                MOM IS
+                            </h4>
+                            <div class="font-montserrat font-black text-3xl sm:text-4xl italic text-slate-900 tracking-tight leading-none drop-shadow-sm">
+                                EXHAUSTED
+                            </div>
+                            <div class="font-montserrat font-extrabold text-amber-900 text-xl sm:text-2xl pt-2 tracking-wide font-outfit">
+                                But Kids Are Happy
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/90 text-white backdrop-blur-md px-6 py-2.5 rounded-full text-xs font-black tracking-widest border border-white/20 shadow-md z-10">
+                            See you at the 8th floor!
+                        </div>
+                    </div>
+
+                    <!-- Poster #2: Dark Doodle Pop Art Style -->
+                    <div class="poster-bg-dark text-white p-8 rounded-3xl flex flex-col justify-between items-center text-center shadow-lg min-h-[380px] border border-slate-800 relative group">
+                        <div class="text-[11px] font-black tracking-widest text-pink-400 bg-slate-800/80 px-3 py-1 rounded-full uppercase border border-slate-700">
+                            Teaser Poster #2 (Doodle Pop Art)
+                        </div>
+
+                        <!-- Illustrated Icons simulation -->
+                        <div class="my-auto py-4 space-y-3 z-10">
+                            <div class="flex justify-center gap-4 text-pink-400 text-3xl">
+                                <i class="fa-solid fa-face-tired text-yellow-300"></i>
+                                <i class="fa-solid fa-star text-cyan-300"></i>
+                                <i class="fa-solid fa-face-laugh-beam text-pink-400"></i>
+                            </div>
+                            <h4 class="font-montserrat font-black text-3xl sm:text-4xl text-sky-400 tracking-wider drop-shadow">
+                                MOM IS EXHAUSTED
+                            </h4>
+                            <p class="font-montserrat font-black text-yellow-300 text-xl sm:text-2xl font-outfit tracking-wide">
+                                ★ But Kids Are Happy ★
+                            </p>
+                            <div class="flex justify-center gap-3 text-xs font-bold text-pink-300 pt-1">
+                                <span>🧸 완구</span> · <span>👟 러닝</span> · <span>👑 스타일</span> · <span>⚡ 촉감</span>
+                            </div>
+                            <div class="text-[10px] text-slate-500 font-mono">DIRTY MOMKEY / SPACE ART</div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 px-6 py-2.5 rounded-full text-xs font-black tracking-wider text-white shadow-md z-10">
+                            See you at the 8th floor!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE 2: SHORT-FORM VIDEO (PDF Page 4) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-amber-500 text-white rounded-xl text-xs font-black font-montserrat">PHASE 2</span>
+                        <h3 class="text-xl font-bold text-slate-900">숏폼 영상 <span class="text-xs text-amber-600 font-bold ml-2">9:16 모바일 최적화 (릴스·쇼츠·틱톡)</span></h3>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">여정 시각화 & 편의 서비스 설득</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Text Details -->
+                    <div class="lg:col-span-7 space-y-4 text-sm text-slate-600">
+                        <p class="leading-relaxed">
+                            엄마와 아이가 백화점에 도착해서 쇼핑하고 휴식하기까지의 실제 여정을 속도감 있게 연출합니다.
+                        </p>
+                        <div class="space-y-2.5">
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80 flex items-center gap-3">
+                                <i class="fa-solid fa-mobile-screen-button text-amber-500 text-xl shrink-0"></i>
+                                <span><strong>백화점 앱 기능 연동:</strong> 스마트폰 앱을 통한 식당 아기 의자 실시간 수량 확인</span>
+                            </div>
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80 flex items-center gap-3">
+                                <i class="fa-solid fa-baby-carriage text-amber-500 text-xl shrink-0"></i>
+                                <span><strong>유모차 전용 동선 시각화:</strong> 턱 없는 쾌적한 이동 및 유모차 주차 공간 강조</span>
+                            </div>
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80 flex items-center gap-3">
+                                <i class="fa-solid fa-arrows-up-down text-amber-500 text-xl shrink-0"></i>
+                                <span><strong>8F ↔ 9F 연결성:</strong> 8층 아이의 신나는 체험과 9층 통유리 뷰카페 엄마의 휴식 매칭</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200/70 text-xs text-amber-900 space-y-1">
+                            <div class="font-bold flex items-center gap-1.5 text-amber-800">
+                                <i class="fa-solid fa-circle-info"></i> 숏폼 비디오 원본 파일 안내
+                            </div>
+                            <p class="text-slate-600">
+                                우측 모바일 9:16 플레이어에 <strong><i class="fa-solid fa-file-video text-amber-600"></i> KakaoTalk_20260921_165244550.mp4</strong> 영상이 재생되도록 세팅되어 있습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Mobile Phone Player (9:16 Video Player) -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-68 sm:w-72 h-[480px] bg-slate-900 rounded-[40px] p-3 shadow-2xl border-4 border-slate-700 relative flex flex-col justify-between overflow-hidden">
+                            <!-- Camera Notch -->
+                            <div class="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-900 rounded-b-xl z-30"></div>
+
+                            <!-- Screen Container -->
+                            <div class="relative w-full h-full rounded-[30px] overflow-hidden bg-black flex flex-col justify-between text-white group">
+                                
+                                <!-- Top Bar Overlay -->
+                                <div class="absolute top-0 inset-x-0 p-4 pt-5 flex justify-between items-center z-30 text-[10px] text-white/90 bg-gradient-to-b from-black/70 via-black/30 to-transparent">
+                                    <span class="font-bold flex items-center gap-1.5">
+                                        <i class="fa-solid fa-video text-rose-500 animate-pulse"></i> 9:16 SHORT-FORM
+                                    </span>
+                                    <span class="bg-rose-500/80 px-2 py-0.5 rounded-full text-[9px] font-black">LIVE PREVIEW</span>
+                                </div>
+
+                                <!-- 9:16 Video Player Element -->
+                                <video 
+                                    id="shortform-video"
+                                    class="absolute inset-0 w-full h-full object-cover z-10"
+                                    autoplay 
+                                    loop 
+                                    muted 
+                                    playsinline
+                                    onerror="handleVideoError()"
+                                >
+                                    <source src="KakaoTalk_20260921_165244550.mp4" type="video/mp4">
+                                    사용하시는 브라우저가 동영상 재생을 지원하지 않습니다.
+                                </video>
+
+                                <!-- Fallback UI if video file is missing/loading in local environment -->
+                                <div id="video-fallback" class="hidden absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-900 to-black flex-col justify-between p-4 text-white z-10">
+                                    <div class="my-auto text-center space-y-3 py-4">
+                                        <div class="w-16 h-16 rounded-full bg-amber-500/20 border border-amber-400/50 mx-auto flex items-center justify-center text-amber-300 text-3xl">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <span class="px-3 py-0.5 rounded-full bg-rose-500/90 text-[10px] font-black tracking-wider">KakaoTalk_20260921_165244550.mp4</span>
+                                        <h5 class="text-sm font-black leading-snug">
+                                            "9:16 숏폼 홍보 영상"
+                                        </h5>
+                                        <p class="text-[11px] text-white/70 px-2 leading-relaxed">
+                                            영상 파일 위치 확인중...
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Overlay Info Controls -->
+                                <div class="absolute bottom-0 inset-x-0 p-4 pt-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-30 space-y-2">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-xs font-black text-amber-400">@dept_store_official</span>
+                                            <span class="text-[10px] bg-white/20 text-white px-1.5 py-0.2 rounded">팔로우</span>
+                                        </div>
+                                        <p class="text-xs font-bold text-white/95 line-clamp-2">
+                                            8층 놀이공간 & 9층 뷰 카페 대공개! 엄마와 아이의 완벽한 주말 코스 ☕🎈 #쇼츠 #백화점리뉴얼
+                                        </p>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="flex items-center justify-between pt-1 border-t border-white/20 text-[11px]">
+                                        <button onclick="toggleVideoMute()" class="flex items-center gap-1.5 text-white/90 hover:text-white bg-white/20 px-2.5 py-1 rounded-full backdrop-blur-md">
+                                            <i id="mute-icon" class="fa-solid fa-volume-xmark text-amber-300"></i>
+                                            <span id="mute-text">음소거 해제</span>
+                                        </button>
+                                        <div class="flex items-center gap-3 text-white/80">
+                                            <span><i class="fa-solid fa-heart text-rose-500 mr-1"></i> 3.8k</span>
+                                            <span><i class="fa-solid fa-share mr-1"></i> 공유</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE 3: CARD NEWS GUIDE (PDF Page 5) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-teal-600 text-white rounded-xl text-xs font-black font-montserrat">PHASE 3</span>
+                        <h3 class="text-xl font-bold text-slate-900">카드뉴스 5종 <span class="text-xs text-teal-700 font-bold ml-2">(FAMILY SHOPPING GUIDE)</span></h3>
+                    </div>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">정보 전달형 가이드 & 저장 유도</span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    문화센터 수업 후의 동선 고민을 짚어내고 8층(놀이터: <strong>RUN, STYLE, PLAY, TOUCH</strong>)과 9층(휴식: <strong>EAT, REST, VIEW</strong>)의 상세 기능을 한눈에 전달합니다.
+                </p>
+
+                <!-- Interactive Card News Viewer -->
+                <div class="bg-slate-50 rounded-3xl p-4 sm:p-6 border border-slate-200">
+                    <!-- Slide Navigation Dots -->
+                    <div class="flex justify-center gap-1.5 sm:gap-2 mb-4" id="slide-indicators">
+                        <button onclick="setSlide(1)" class="slide-dot px-3 py-1 rounded-full text-xs font-bold transition">Slide 01</button>
+                        <button onclick="setSlide(2)" class="slide-dot px-3 py-1 rounded-full text-xs font-bold transition">Slide 02</button>
+                        <button onclick="setSlide(3)" class="slide-dot px-3 py-1 rounded-full text-xs font-bold transition">Slide 03</button>
+                        <button onclick="setSlide(4)" class="slide-dot px-3 py-1 rounded-full text-xs font-bold transition">Slide 04</button>
+                        <button onclick="setSlide(5)" class="slide-dot px-3 py-1 rounded-full text-xs font-bold transition">Slide 05</button>
+                    </div>
+
+                    <!-- Slide Display Card Frame -->
+                    <div class="max-w-xl mx-auto bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-md min-h-[340px] flex flex-col justify-between text-center relative">
+                        <div id="card-news-body" class="space-y-4 my-auto">
+                            <!-- Injected dynamically by JavaScript -->
+                        </div>
+
+                        <!-- Card Footer Controls -->
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-100 text-xs font-bold">
+                            <button onclick="prevSlide()" class="text-slate-500 hover:text-slate-900 flex items-center gap-1 transition">
+                                <i class="fa-solid fa-chevron-left"></i> 이전 Slide
+                            </button>
+                            <span id="slide-count-text" class="text-slate-400 font-extrabold">1 / 5</span>
+                            <button onclick="nextSlide()" class="text-teal-600 hover:text-teal-800 flex items-center gap-1 transition">
+                                다음 Slide <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Item Checklist Section -->
+        <section id="checklist" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-1">
+                        <i class="fa-solid fa-list-check"></i> Action Item Checklist
+                    </div>
+                    <h2 class="text-2xl font-black text-slate-900">PR 실행 체크리스트 (Progress Tracker)</h2>
+                </div>
+
+                <!-- Progress Pill -->
+                <div class="bg-slate-50 border border-slate-200 px-5 py-2.5 rounded-2xl flex items-center gap-4 shrink-0">
+                    <div class="text-right">
+                        <div class="text-[11px] font-bold text-slate-400">전체 완료율</div>
+                        <div class="text-xl font-black text-amber-600" id="progress-percent">0%</div>
+                    </div>
+                    <div class="w-28 bg-slate-200 rounded-full h-3 overflow-hidden">
+                        <div id="progress-bar" class="bg-amber-500 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 hide-scrollbar">
+                <button onclick="filterChecklist('all')" class="chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shrink-0">
+                    전체 항목 보기
+                </button>
+                <button onclick="filterChecklist('teasing')" class="chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">
+                    오픈 전 (Teasing)
+                </button>
+                <button onclick="filterChecklist('dday')" class="chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">
+                    오픈 당일 (D-Day)
+                </button>
+                <button onclick="filterChecklist('sustain')" class="chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">
+                    오픈 후 (Sustain)
+                </button>
+            </div>
+
+            <!-- Checklist Items List -->
+            <div class="space-y-3" id="checklist-container">
+                <!-- Injected via JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <p class="font-extrabold text-slate-200 text-sm">DEPARTMENT STORE SPACE & PR STRATEGY</p>
+                <p class="mt-1 text-slate-400">8F 체험형 패밀리 공간 (Character World) & 9F 다이닝 & 릴렉스 리뉴얼 프로모션 기획서</p>
+            </div>
+            <div class="text-left md:text-right text-slate-500 space-y-1">
+                <p>문서 승인자: <strong class="text-slate-300">한진위</strong> | 기획 담당: <strong class="text-slate-300">손예윤</strong> | 진위여부: <strong class="text-slate-300">이수현</strong></p>
+                <p>© Department Store Marketing & Space PR Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchFloor(floor) {
+            const btn8 = document.getElementById('btn-floor-8');
+            const btn9 = document.getElementById('btn-floor-9');
+            const content8 = document.getElementById('floor-8-content');
+            const content9 = document.getElementById('floor-9-content');
+
+            if (floor === '8F') {
+                btn8.className = "px-5 py-2.5 rounded-xl transition-all shadow-sm bg-white text-slate-900 font-extrabold";
+                btn9.className = "px-5 py-2.5 rounded-xl transition-all text-slate-600 hover:text-slate-900 font-bold";
+                content8.classList.remove('hidden');
+                content9.classList.add('hidden');
+            } else {
+                btn9.className = "px-5 py-2.5 rounded-xl transition-all shadow-sm bg-white text-slate-900 font-extrabold";
+                btn8.className = "px-5 py-2.5 rounded-xl transition-all text-slate-600 hover:text-slate-900 font-bold";
+                content9.classList.remove('hidden');
+                content8.classList.add('hidden');
+            }
+        }
+
+        function toggleVideoMute() {
+            const video = document.getElementById('shortform-video');
+            const icon = document.getElementById('mute-icon');
+            const text = document.getElementById('mute-text');
+
+            if (video) {
+                video.muted = !video.muted;
+                if (video.muted) {
+                    icon.className = "fa-solid fa-volume-xmark text-amber-300";
+                    text.innerText = "음소거 해제";
+                } else {
+                    icon.className = "fa-solid fa-volume-high text-emerald-400";
+                    text.innerText = "음소거 중";
+                }
+            }
+        }
+
+        function handleVideoError() {
+            const fallback = document.getElementById('video-fallback');
+            if (fallback) {
+                fallback.classList.remove('hidden');
+                fallback.classList.add('flex');
+            }
+        }
+
+        let currentSlide = 1;
+        const slideData = [
+            {
+                title: "아이와 함께여서 더 편한<br><span class='text-teal-600'>엄마의 휴식, 아이의 즐거움</span>",
+                sub: "FAMILY SHOPPING GUIDE · Slide 01",
+                badge: "8F 플레이존 · 9F 패밀리 푸드코트",
+                content: "문화센터부터 쇼핑, 식사까지 한 번에! 육아맘을 위해 새로워진 8-9층 패밀리 라이프스타일 존 공식 가이드입니다."
+            },
+            {
+                title: "문센 끝나고<br><span class='text-amber-600'>어디 갈지 또 고민되셨죠?</span>",
+                sub: "Slide 02 · 페인포인트 공감",
+                badge: "유모차 이동 · 쇼핑 · 식사",
+                content: "아이와 함께라면 평범한 백화점 동선도 어느새 하나의 미션이 됩니다. 턱 없는 넓은 동선과 유모차 전용 주차장으로 편안함을 선물합니다."
+            },
+            {
+                title: "보고만 있던 매장에서<br><span class='text-rose-600'>직접 경험하는 놀이터로</span>",
+                sub: "Slide 03 · 8F 캐릭터존",
+                badge: "RUN · STYLE · PLAY · TOUCH",
+                content: "<strong>RUN:</strong> 신어보고! | <strong>STYLE:</strong> 꾸며보고! | <strong>PLAY:</strong> 놀아보고! | <strong>TOUCH:</strong> 만져보고!<br>아이에겐 기다리는 시간이 아닌 스스로 탐험하는 시간이 됩니다."
+            },
+            {
+                title: "신나게 놀았다면<br><span class='text-teal-600'>이제 함께 쉬는 시간</span>",
+                sub: "Slide 04 · 9F 다이닝 & Rest",
+                badge: "EAT · REST · VIEW",
+                content: "넓은 유모차 동선과 가족 편의시설, 그리고 8층 플레이존을 조망하는 통유리 뷰 카페까지! 놀고 난 뒤의 휴식도 여유롭게 이어집니다."
+            },
+            {
+                title: "아이 때문에 머무는 공간이 아니라<br><span class='text-amber-600'>아이와 함께 머물고 싶은 공간으로</span>",
+                sub: "Slide 05 · 메세지 정리",
+                badge: "PLAY · SHOP · EAT · REST",
+                content: "아이의 즐거움과 부모의 휴식이 하나의 멋진 경험으로 연결되는 새로운 백화점 리테일 공간을 직접 경험해보세요."
+            }
+        ];
+
+        function renderSlide() {
+            const data = slideData[currentSlide - 1];
+            const body = document.getElementById('card-news-body');
+            const slideCountText = document.getElementById('slide-count-text');
+
+            body.innerHTML = `
+                <span class="inline-block px-3 py-1 rounded-full bg-teal-50 text-teal-800 text-xs font-black border border-teal-200">
+                    ${data.badge}
+                </span>
+                <span class="text-[11px] font-extrabold text-slate-400 uppercase tracking-widest block">${data.sub}</span>
+                <h4 class="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
+                    ${data.title}
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
+                    ${data.content}
+                </p>
+            `;
+
+            slideCountText.innerText = `${currentSlide} / ${slideData.length}`;
+
+            // Update indicators styling
+            const dots = document.querySelectorAll('.slide-dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide - 1) {
+                    dot.className = "slide-dot px-3 py-1 rounded-full text-xs font-black bg-teal-600 text-white shadow-xs";
+                } else {
+                    dot.className = "slide-dot px-3 py-1 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200";
+                }
+            });
+        }
+
+        function setSlide(num) {
+            currentSlide = num;
+            renderSlide();
+        }
+
+        function nextSlide() {
+            currentSlide = currentSlide % slideData.length + 1;
+            renderSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 2 + slideData.length) % slideData.length + 1;
+            renderSlide();
+        }
+
+        const checklistItems = [
+            // Phase 1: Teaser
+            { id: 1, category: 'teasing', phase: '티저 포스터', text: '인스타그램 피드에 2종 이미지를 교차 업로드하여 시각적 주목도 확보', done: false },
+            { id: 2, category: 'teasing', phase: '티저 포스터', text: '지역 맘카페에 "오늘도 영혼 털린 맘들 공감하시죠?" 포스터 첨부 바이럴 유도', done: false },
+            { id: 3, category: 'teasing', phase: '티저 포스터', text: '백화점 내외부 공사 가림막(Hoarding) 및 엘리베이터 스크린 포스터 선행 노출', done: false },
+            { id: 4, category: 'teasing', phase: '숏폼 영상', text: '앱으로 아기 의자를 확인하는 편의성 강조 10초 짧은 클립 선공개', done: false },
+            { id: 5, category: 'teasing', phase: '카드뉴스 5종', text: '백화점 공식 블로그 및 카카오톡 플러스친구 메시지 "오픈 프리뷰 가이드" 선발행', done: false },
+
+            // Phase 2: D-Day
+            { id: 6, category: 'dday', phase: '티저 포스터', text: '포스터 정답(8층 체험형 공간 오픈) 스토리 업로드 및 본 캠페인 링크 연결', done: false },
+            { id: 7, category: 'dday', phase: '숏폼 영상', text: '인스타그램 릴스, 유튜브 쇼츠, 틱톡 채널 풀버전 영상 동시 업로드 및 상단 고정', done: false },
+            { id: 8, category: 'dday', phase: '숏폼 영상', text: '해운대 인근 3040 여성 타깃 영상 스폰서드 광고(Meta Ads) 집중 집행', done: false },
+            { id: 9, category: 'dday', phase: '숏폼 영상', text: '백화점 앱 푸시 알림에 영상 링크 삽입하여 방문 유도', done: false },
+            { id: 10, category: 'dday', phase: '카드뉴스 5종', text: '인스타그램 Carousel 포맷으로 5장 업로드 및 하단 "저장하기" 클릭 유도', done: false },
+            { id: 11, category: 'dday', phase: '카드뉴스 5종', text: '문화센터 수강생 대상 카카오톡 알림톡으로 1시간 퀵 쇼핑 코스 안내 발송', done: false },
+
+            // Phase 3: Sustain
+            { id: 12, category: 'sustain', phase: '티저 포스터', text: '방문 고객 대상 "Mom is exhausted" 포스터 인증샷 밈(Meme) 이벤트 진행', done: false },
+            { id: 13, category: 'sustain', phase: '숏폼 영상', text: '릴스 BGM 활용 고객 참여형 챌린지 기획 (아이가 8층에서 노는 모습 챌린지)', done: false },
+            { id: 14, category: 'sustain', phase: '숏폼 영상', text: '시청 후 앱 접속/안내 클릭 전환율 데이터 분석 및 광고 최적화', done: false },
+            { id: 15, category: 'sustain', phase: '카드뉴스 5종', text: '체류 시간 SNS 인사이트 분석 및 생생 후기 바탕 2차 카드뉴스 가공 발행', done: false }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            const filtered = currentFilter === 'all' 
+                ? checklistItems 
+                : checklistItems.filter(item => item.category === currentFilter);
+
+            container.innerHTML = filtered.map(item => `
+                <div class="p-4 rounded-2xl border ${item.done ? 'bg-amber-50/60 border-amber-200' : 'bg-white border-slate-200/90'} flex items-start justify-between gap-3 transition">
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleItem(${item.id})" class="mt-1 w-4 h-4 text-amber-500 rounded border-slate-300 focus:ring-amber-400 cursor-pointer">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md ${getCategoryBadgeClass(item.category)}">
+                                    ${getCategoryLabel(item.category)}
+                                </span>
+                                <span class="text-xs font-extrabold text-slate-500">${item.phase}</span>
+                            </div>
+                            <p class="text-xs sm:text-sm font-medium ${item.done ? 'line-through text-slate-400' : 'text-slate-800'} leading-relaxed">
+                                ${item.text}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            updateProgress();
+        }
+
+        function getCategoryLabel(cat) {
+            if (cat === 'teasing') return '오픈 전 (Teasing)';
+            if (cat === 'dday') return '오픈 당일 (D-Day)';
+            return '오픈 후 (Sustain)';
+        }
+
+        function getCategoryBadgeClass(cat) {
+            if (cat === 'teasing') return 'bg-sky-100 text-sky-800';
+            if (cat === 'dday') return 'bg-rose-100 text-rose-800';
+            return 'bg-emerald-100 text-emerald-800';
+        }
+
+        function toggleItem(id) {
+            const found = checklistItems.find(i => i.id === id);
+            if (found) {
+                found.done = !found.done;
+                renderChecklist();
+            }
+        }
+
+        function filterChecklist(cat) {
+            currentFilter = cat;
+            
+            // Update filter button styles
+            const btns = document.querySelectorAll('.chk-filter-btn');
+            btns.forEach(btn => {
+                btn.className = "chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0";
+            });
+            event.currentTarget.className = "chk-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shrink-0 shadow-xs";
+
+            renderChecklist();
+        }
+
+        function updateProgress() {
+            const completed = checklistItems.filter(i => i.done).length;
+            const total = checklistItems.length;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            document.getElementById('progress-percent').innerText = `${percent}%`;
+            document.getElementById('nav-progress-text').innerText = `${completed}/${total}`;
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onload = function() {
+            renderSlide();
+            renderChecklist();
+        }
+    </script>
+</body>
+</html>
