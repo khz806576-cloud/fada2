@@ -238,7 +238,7 @@
                     <div>
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold shadow-sm">
-                                <i class="fa-solid fa-sparkles text-lg"></i>
+                                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
                             </div>
                             <div>
                                 <h3 class="text-lg font-black text-slate-900">핵심 전략 (Core Value)</h3>
@@ -457,15 +457,26 @@
                 <div class="flex items-center justify-between flex-wrap gap-3">
                     <div class="flex items-center gap-3">
                         <span class="px-3 py-1 bg-slate-900 text-white rounded-xl text-xs font-black font-montserrat">PHASE 1</span>
-                        <h3 class="text-xl font-bold text-slate-900">티저 포스터 1종 <span class="text-xs text-rose-600 font-bold ml-2">"MOM IS EXHAUSTED"</span></h3>
+                        <h3 class="text-xl font-bold text-slate-900">티저 포스터 1종 <span class="text-xs text-rose-600 font-bold ml-2">"GRAND OPENING"</span></h3>
                     </div>
-                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">공감대 형성 & 8층 호기심 극대화</span>
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">공간 베일 언베일링 & 오픈 기대감 극대화</span>
                 </div>
 
-                <p class="text-sm text-slate-600 leading-relaxed">
-                    육아맘이라면 누구나 겪는 <strong>'지친 엄마와 에너지가 넘치는 아이'</strong>의 상황을 직관적인 비주얼로 표현. 
-                    <em class="text-slate-800 font-bold">"See you at the 8th floor!"</em> 문구로 궁금증을 유발합니다.
-                </p>
+                <div class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <p>
+                        붉은 리본이 풀리며 베일을 벗는 입체 미니어처 세트 연출과 메인 슬로건 <strong>"엄마는 쇼핑을, 아이는 공간을"</strong>을 통해 8F-9F 리뉴얼 공간의 조화를 감각적으로 표현했습니다.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/70">
+                            <span class="font-bold text-slate-800 block mb-0.5"><i class="fa-solid fa-ribbon text-rose-500 mr-1"></i> 베일 언베일링 비주얼</span>
+                            강렬한 붉은 리본 오브제로 8F 캐릭터 푸드존과 9F 뷰카페가 하나로 연결된 공간이 열리는 압도적 인상을 선사합니다.
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/70">
+                            <span class="font-bold text-slate-800 block mb-0.5"><i class="fa-solid fa-quote-left text-amber-500 mr-1"></i> 핵심 메세지 각인</span>
+                            <em class="text-rose-700 font-bold">"엄마는 쇼핑을, 아이는 공간을"</em> 슬로건으로 부모의 휴식과 아이의 즐거움이 완벽히 공존하는 새로운 브랜드 가치를 전달합니다.
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Single Teaser Poster Image Display -->
                 <div class="flex justify-center pt-2">
@@ -840,7 +851,7 @@
 
         const checklistItems = [
             // Phase 1: Teaser
-            { id: 1, category: 'teasing', phase: '티저 포스터', text: '인스타그램 피드에 2종 이미지를 교차 업로드하여 시각적 주목도 확보', done: false },
+            { id: 1, category: 'teasing', phase: '티저 포스터', text: '인스타그램 피드 및 주요 SNS 채널에 티저 포스터 1종을 업로드하여 타깃 주목도 확보', done: false },
             { id: 2, category: 'teasing', phase: '티저 포스터', text: '지역 맘카페에 "오늘도 영혼 털린 맘들 공감하시죠?" 포스터 첨부 바이럴 유도', done: false },
             { id: 3, category: 'teasing', phase: '티저 포스터', text: '백화점 내외부 공사 가림막(Hoarding) 및 엘리베이터 스크린 포스터 선행 노출', done: false },
             { id: 4, category: 'teasing', phase: '숏폼 영상', text: '앱으로 아기 의자를 확인하는 편의성 강조 10초 짧은 클립 선공개', done: false },
@@ -855,7 +866,7 @@
             { id: 11, category: 'dday', phase: '카드뉴스 5종', text: '문화센터 수강생 대상 카카오톡 알림톡으로 1시간 퀵 쇼핑 코스 안내 발송', done: false },
 
             // Phase 3: Sustain
-            { id: 12, category: 'sustain', phase: '티저 포스터', text: '방문 고객 대상 "Mom is exhausted" 포스터 인증샷 밈(Meme) 이벤트 진행', done: false },
+            { id: 12, category: 'sustain', phase: '티저 포스터', text: '방문 고객 대상 "엄마는 쇼핑을, 아이는 공간을" 포스터 인증샷 밈(Meme) 이벤트 진행', done: false },
             { id: 13, category: 'sustain', phase: '숏폼 영상', text: '릴스 BGM 활용 고객 참여형 챌린지 기획 (아이가 8층에서 노는 모습 챌린지)', done: false },
             { id: 14, category: 'sustain', phase: '숏폼 영상', text: '시청 후 앱 접속/안내 클릭 전환율 데이터 분석 및 광고 최적화', done: false },
             { id: 15, category: 'sustain', phase: '카드뉴스 5종', text: '체류 시간 SNS 인사이트 분석 및 생생 후기 바탕 2차 카드뉴스 가공 발행', done: false }
